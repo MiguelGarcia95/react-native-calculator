@@ -4,17 +4,36 @@ import {StyleSheet, Text, View, TouchableOpacity, Button} from 'react-native';
 export default class App extends Component {
   constructor() {
     super();
-    this.state = {}
+    this.state = {
+      resultText: ''
+    }
+
+    this.buttonPressed = this.buttonPressed.bind(this);
+    this.calculateResult = this.calculateResult.bind(this);
+  }
+
+  calculateResult(text) {
+
+  }
+
+  buttonPressed(text) {
+    if (text === '=') {
+      return this.calculateResult(this.state.resultText);
+    }
+
+    this.setState({
+      resultText: this.state.resultText+text
+    })
   }
 
   render() {
     let rows = [];
-    let nums = [[1,2,3], [4,5,6], [7,8,9], ['c', 0, '=']];
+    let nums = [[1,2,3], [4,5,6], [7,8,9], ['.', 0, '=']];
     for(let i = 0; i < 4; i++) {
       let row = [];
       for(let j = 0; j < 3; j++) {
         row.push(
-          <TouchableOpacity key={nums[i][j]} style={styles.btn}>
+          <TouchableOpacity key={nums[i][j]} onPress={() => this.buttonPressed(nums[i][j])} style={styles.btn}>
             <Text style={styles.btntext}>{nums[i][j]}</Text>
           </TouchableOpacity>
         )
@@ -35,7 +54,7 @@ export default class App extends Component {
     return (
       <View style={styles.container}>
         <View style={styles.result}>
-          <Text style={styles.resultText}>11*11</Text>
+          <Text style={styles.resultText}>{this.state.resultText}</Text>
         </View>
         <View style={styles.calculation}>
           <Text style={styles.calculationText}>121</Text>
