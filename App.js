@@ -40,9 +40,8 @@ export default class App extends Component {
       case '-': 
       case '*': 
       case '/': 
-        if (this.state.resultText === '') return;
-        console.log(operation)
-        // console.log(this.state.resultText.slice(0, -1))
+        if (this.state.resultText === '' || this.state.resultText.substr(-1) === operation) return;
+        console.log(this.state.resultText.substr(-1))
         this.setState({
           resultText: this.state.resultText + operation
         })
