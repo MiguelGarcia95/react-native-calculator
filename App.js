@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import {StyleSheet, Text, View, TouchableOpacity, Button} from 'react-native';
+import {StyleSheet, Text, View, TouchableOpacity} from 'react-native';
 
 export default class App extends Component {
   constructor() {
@@ -12,18 +12,23 @@ export default class App extends Component {
     this.calculateResult = this.calculateResult.bind(this);
   }
 
-  calculateResult(text) {
-
+  calculateResult() {
+    const text = this.state.resultText;
+    //parse text
   }
 
   buttonPressed(text) {
     if (text === '=') {
-      return this.calculateResult(this.state.resultText);
+      return this.calculateResult();
     }
 
     this.setState({
       resultText: this.state.resultText+text
     })
+  }
+
+  operate(operation) {
+
   }
 
   render() {
@@ -41,11 +46,11 @@ export default class App extends Component {
       rows.push(<View key={nums[i][0]} style={styles.row}>{row}</View>)
     }
 
-    let operations = ['+', '-', '*', '/'];
+    let operations = ['DEL', '+', '-', '*', '/'];
     let ops = [];
     for(let i = 0; i < 4; i++) {
       ops.push(
-        <TouchableOpacity key={operations[i]}  style={styles.btn}>
+        <TouchableOpacity key={operations[i]}  style={styles.btn} onPress={() => this.operate(operations[i])}>
           <Text style={[styles.btntext, styles.white]}>{operations[i] }</Text>
         </TouchableOpacity>
       )
