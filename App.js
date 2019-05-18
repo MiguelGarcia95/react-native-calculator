@@ -7,6 +7,7 @@ export default class App extends Component {
     this.state = {
       resultText: ''
     }
+    this.operations = ['DEL', '+', '-', '*', '/'];
 
     this.buttonPressed = this.buttonPressed.bind(this);
     this.calculateResult = this.calculateResult.bind(this);
@@ -40,8 +41,8 @@ export default class App extends Component {
       case '-': 
       case '*': 
       case '/': 
-        if (this.state.resultText === '' || this.state.resultText.substr(-1) === operation) return;
-        console.log(this.state.resultText.substr(-1))
+        if (this.operations.indexOf(this.state.resultText.substr(-1)) > 0) return;
+        if (this.state.resultText === '') return;
         this.setState({
           resultText: this.state.resultText + operation
         })
@@ -64,12 +65,11 @@ export default class App extends Component {
       rows.push(<View key={nums[i][0]} style={styles.row}>{row}</View>)
     }
 
-    let operations = ['DEL', '+', '-', '*', '/'];
     let ops = [];
     for(let i = 0; i < 5; i++) {
       ops.push(
-        <TouchableOpacity key={operations[i]}  style={styles.btn} onPress={() => this.operate(operations[i])}>
-          <Text style={[styles.btntext, styles.white]}>{operations[i] }</Text>
+        <TouchableOpacity key={this.operations[i]}  style={styles.btn} onPress={() => this.operate(this.operations[i])}>
+          <Text style={[styles.btntext, styles.white]}>{this.operations[i] }</Text>
         </TouchableOpacity>
       )
     }
