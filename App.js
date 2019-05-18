@@ -24,8 +24,25 @@ export default class App extends Component {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    justifyContent: 'center',
-    alignItems: 'center',
-    backgroundColor: '#F5FCFF',
+  },
+  result: {
+    flex: 1,
+    backgroundColor: 'red',
+  },
+  calculation: {
+    flex: 1,
+    backgroundColor: 'green'
+  }, 
+  buttons: {
+    flexGrow: 1,
+    flexDirection: 'row'
+  },
+  numbers: {
+    flex: 3,
+    backgroundColor: 'yellow',
+  },
+  operations: {
+    flex: 1,
+    backgroundColor: 'black'
   }
 });
