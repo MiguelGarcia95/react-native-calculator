@@ -15,11 +15,14 @@ export default class App extends Component {
 
   calculateResult() {
     const text = this.state.resultText;
+    if (text) {
+
+    }
     //parse text
   }
 
   buttonPressed(text) {
-    if (text === '=') {
+    if (text === '=' || text === '.' && this.state.resultText.includes('.')) {
       return this.calculateResult();
     }
 
