@@ -55,6 +55,14 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
   },
+  resultText: {
+    fontSize: 20,
+    color: 'white'
+  },
+  calculationText: {
+    fontSize: 14,
+    color: 'white'
+  },
   row: {
     flex: 1,
     flexDirection: 'row',
