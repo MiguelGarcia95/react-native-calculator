@@ -19,13 +19,13 @@ export default class App extends Component {
         <View style={styles.buttons}>
           <View style={styles.numbers}>
             <View style={styles.row}>
-              <TouchableOpacity>
+              <TouchableOpacity style={styles.btn}>
                 <Text>0</Text>
               </TouchableOpacity>
-              <TouchableOpacity>
+              <TouchableOpacity style={styles.btn}>
                 <Text>0</Text>
               </TouchableOpacity>
-              <TouchableOpacity>
+              <TouchableOpacity style={styles.btn}>
                 <Text>0</Text>
               </TouchableOpacity>
             </View>
@@ -64,6 +64,12 @@ const styles = StyleSheet.create({
   resultText: {
     fontSize: 30,
     color: 'white'
+  },
+  btn: {
+    flex: 1,
+    alignItems: 'center',
+    alignSelf: 'stretch',
+    justifyContent: 'center'
   },
   calculationText: {
     fontSize: 24,
