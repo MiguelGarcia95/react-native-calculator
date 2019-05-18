@@ -53,7 +53,7 @@ export default class App extends Component {
 
     let operations = ['DEL', '+', '-', '*', '/'];
     let ops = [];
-    for(let i = 0; i < 4; i++) {
+    for(let i = 0; i < 5; i++) {
       ops.push(
         <TouchableOpacity key={operations[i]}  style={styles.btn} onPress={() => this.operate(operations[i])}>
           <Text style={[styles.btntext, styles.white]}>{operations[i] }</Text>
