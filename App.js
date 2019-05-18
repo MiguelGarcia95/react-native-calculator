@@ -9,25 +9,25 @@ export default class App extends Component {
 
   render() {
     let rows = [];
-    let nums = [0 , 0, '='];
+    let nums = [[1,2,3], [4,5,6], [7,8,9], ['c', 0, '=']];
     for(let i = 0; i < 4; i++) {
       let row = [];
       for(let j = 0; j < 3; j++) {
         row.push(
-          <TouchableOpacity style={styles.btn}>
-            <Text style={styles.btntext}>{i !== 3 ? (i*3+j+1) : nums[j] }</Text>
+          <TouchableOpacity key={nums[i][j]} style={styles.btn}>
+            <Text style={styles.btntext}>{nums[i][j]}</Text>
           </TouchableOpacity>
         )
       }
-      rows.push(<View style={styles.row}>{row}</View>)
+      rows.push(<View key={nums[i][0]} style={styles.row}>{row}</View>)
     }
 
     let operations = ['+', '-', '*', '/'];
     let ops = [];
     for(let i = 0; i < 4; i++) {
       ops.push(
-        <TouchableOpacity style={styles.btn}>
-          <Text style={styles.btntext}>{operations[i] }</Text>
+        <TouchableOpacity key={operations[i]}  style={styles.btn}>
+          <Text style={[styles.btntext, styles.white]}>{operations[i] }</Text>
         </TouchableOpacity>
       )
     }
@@ -60,6 +60,12 @@ const styles = StyleSheet.create({
   resultText: {
     fontSize: 30,
     color: 'white'
+  },
+  white: {
+    color: 'white'
+  },
+  btntext: {
+    fontSize: 30
   },
   btn: {
     flex: 1,
