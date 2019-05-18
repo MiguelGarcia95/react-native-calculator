@@ -10,8 +10,12 @@ export default class App extends Component {
   render() {
     return (
       <View style={styles.container}>
-        <View style={styles.result}></View>
-        <View style={styles.calculation}></View>
+        <View style={styles.result}>
+          <Text style={styles.resultText}>11*11</Text>
+        </View>
+        <View style={styles.calculation}>
+          <Text style={styles.calculationText}>121</Text>
+        </View>
         <View style={styles.buttons}>
           <View style={styles.numbers}>
             <View style={styles.row}>
@@ -77,5 +81,6 @@ const styles = StyleSheet.create({
     flex: 1,
     justifyContent: 'space-around',
     backgroundColor: 'black',
+    alignItems: 'stretch',
   }
 });
