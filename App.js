@@ -35,7 +35,12 @@ export default class App extends Component {
               <Button title='2' />
             </View>
           </View>
-          <View style={styles.operations}></View>
+          <View style={styles.operations}>
+            <Button title='+' />
+            <Button title='+' />
+            <Button title='+' />
+            <Button title='+' />
+          </View>
         </View>
       </View>
     );
@@ -47,7 +52,10 @@ const styles = StyleSheet.create({
     flex: 1,
   },
   row: {
-    flexDirection: 'row'
+    flex: 1,
+    flexDirection: 'row',
+    justifyContent: 'space-around',
+    alignItems: 'center'
   },
   result: {
     flex: 2,
@@ -67,6 +75,7 @@ const styles = StyleSheet.create({
   },
   operations: {
     flex: 1,
-    backgroundColor: 'black'
+    justifyContent: 'space-around',
+    backgroundColor: 'black',
   }
 });
