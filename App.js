@@ -26,7 +26,7 @@ const styles = StyleSheet.create({
     flex: 1,
   },
   result: {
-    flex: 1,
+    flex: 2,
     backgroundColor: 'red',
   },
   calculation: {
@@ -34,7 +34,7 @@ const styles = StyleSheet.create({
     backgroundColor: 'green'
   }, 
   buttons: {
-    flexGrow: 1,
+    flex: 7,
     flexDirection: 'row'
   },
   numbers: {
