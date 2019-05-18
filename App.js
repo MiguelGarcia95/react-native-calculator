@@ -13,23 +13,25 @@ export default class App extends Component {
     for(let i = 0; i < 4; i++) {
       let row = [];
       for(let j = 0; j < 3; j++) {
-        if (i !== 3) {
-          row.push(
-            <TouchableOpacity style={styles.btn}>
-              <Text style={styles.btntext}>{i*3 + j + 1}</Text>
-            </TouchableOpacity>
-          )
-        } else {
-          row.push(
-            <TouchableOpacity style={styles.btn}>
-              <Text style={styles.btntext}>{nums[j]}</Text>
-            </TouchableOpacity>
-          )
-        }
+        row.push(
+          <TouchableOpacity style={styles.btn}>
+            <Text style={styles.btntext}>{i !== 3 ? (i*3+j+1) : nums[j] }</Text>
+          </TouchableOpacity>
+        )
       }
       rows.push(<View style={styles.row}>{row}</View>)
     }
-    
+
+    let operations = ['+', '-', '*', '/'];
+    let ops = [];
+    for(let i = 0; i < 4; i++) {
+      ops.push(
+        <TouchableOpacity style={styles.btn}>
+          <Text style={styles.btntext}>{operations[i] }</Text>
+        </TouchableOpacity>
+      )
+    }
+
     return (
       <View style={styles.container}>
         <View style={styles.result}>
@@ -43,10 +45,7 @@ export default class App extends Component {
             {rows}
           </View>
           <View style={styles.operations}>
-            <Button title='+' />
-            <Button title='+' />
-            <Button title='+' />
-            <Button title='+' />
+            {ops}
           </View>
         </View>
       </View>
