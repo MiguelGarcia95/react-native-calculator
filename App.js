@@ -141,13 +141,13 @@ const styles = StyleSheet.create({
   },
   result: {
     flex: 2,
-    backgroundColor: 'red',
+    backgroundColor: 'white',
     justifyContent: 'center',
     alignItems: 'flex-end'
   },
   calculation: {
     flex: 1,
-    backgroundColor: 'green',
+    backgroundColor: 'white',
     justifyContent: 'center',
     alignItems: 'flex-end'
   }, 
