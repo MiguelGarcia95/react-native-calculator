@@ -33,6 +33,16 @@ export default class App extends Component {
       case 'DEL':
         let text = this.state.resultText.slice(0, -1);
         this.setState({resultText: text});
+        break;
+      case '+': 
+      case '-': 
+      case '*': 
+      case '/': 
+        if (this.state.resultText === '') return;
+        this.setState({
+          resultText: this.state.resultText + operation
+        })
+        break;
     }
   }
 
