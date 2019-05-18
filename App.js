@@ -34,14 +34,15 @@ export default class App extends Component {
   operate(operation) {
     switch(operation) {
       case 'DEL':
-        let text = this.state.resultText.slice(0, -1);
-        this.setState({resultText: text});
+        this.setState({resultText: this.state.resultText.slice(0, -1)});
         break;
       case '+': 
       case '-': 
       case '*': 
       case '/': 
         if (this.state.resultText === '') return;
+        console.log(operation)
+        // console.log(this.state.resultText.slice(0, -1))
         this.setState({
           resultText: this.state.resultText + operation
         })
