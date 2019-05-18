@@ -56,11 +56,11 @@ const styles = StyleSheet.create({
     flex: 1,
   },
   resultText: {
-    fontSize: 20,
+    fontSize: 30,
     color: 'white'
   },
   calculationText: {
-    fontSize: 14,
+    fontSize: 24,
     color: 'white'
   },
   row: {
@@ -72,10 +72,14 @@ const styles = StyleSheet.create({
   result: {
     flex: 2,
     backgroundColor: 'red',
+    justifyContent: 'center',
+    alignItems: 'flex-end'
   },
   calculation: {
     flex: 1,
-    backgroundColor: 'green'
+    backgroundColor: 'green',
+    justifyContent: 'center',
+    alignItems: 'flex-end'
   }, 
   buttons: {
     flex: 7,
