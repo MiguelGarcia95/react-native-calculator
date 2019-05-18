@@ -14,6 +14,7 @@ export default class App extends Component {
     this.buttonPressed = this.buttonPressed.bind(this);
     this.calculateResult = this.calculateResult.bind(this);
     this.operate = this.operate.bind(this);
+    this.validate = this.validate.bind(this);
   }
 
   calculateResult() {
@@ -23,13 +24,24 @@ export default class App extends Component {
     })
   }
 
+  validate() {
+    const text = this.state.resultText;
+    switch(text.slice(-1)) {
+      case '+':
+      case '-':
+      case '*':
+      case '/':
+        return false;
+      default: 
+        return true;
+    }
+  }
+
   buttonPressed(text) {
     if (text === '=') {
-      return this.calculateResult();
+      return this.validate() && this.calculateResult();
     }
 
-    // if (text !== '.' && !this.state.resultText.includes('.')) {
-    // }
     this.setState({
       resultText: this.state.resultText+text
     })
@@ -45,7 +57,7 @@ export default class App extends Component {
       case '-': 
       case '*': 
       case '/': 
-        if (this.operations.indexOf(this.state.resultText.substr(-1)) > 0) return;
+        if (this.operations.indexOf(this.state.resultText.slice(-1)) > 0) return;
         if (this.state.resultText === '') return;
         this.setState({
           resultText: this.state.resultText + operation
