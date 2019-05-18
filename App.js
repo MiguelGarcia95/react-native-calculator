@@ -10,6 +10,7 @@ export default class App extends Component {
 
     this.buttonPressed = this.buttonPressed.bind(this);
     this.calculateResult = this.calculateResult.bind(this);
+    this.operate = this.operate.bind(this);
   }
 
   calculateResult() {
@@ -28,7 +29,11 @@ export default class App extends Component {
   }
 
   operate(operation) {
-
+    switch(operation) {
+      case 'DEL':
+        let text = this.state.resultText.slice(0, -1);
+        this.setState({resultText: text});
+    }
   }
 
   render() {
