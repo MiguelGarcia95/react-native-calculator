@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import {StyleSheet, Text, View, Button} from 'react-native';
+import {StyleSheet, Text, View, TouchableOpacity, Button} from 'react-native';
 
 export default class App extends Component {
   constructor() {
@@ -19,9 +19,15 @@ export default class App extends Component {
         <View style={styles.buttons}>
           <View style={styles.numbers}>
             <View style={styles.row}>
-              <Button title='0' />
-              <Button title='1' />
-              <Button title='2' />
+              <TouchableOpacity>
+                <Text>0</Text>
+              </TouchableOpacity>
+              <TouchableOpacity>
+                <Text>0</Text>
+              </TouchableOpacity>
+              <TouchableOpacity>
+                <Text>0</Text>
+              </TouchableOpacity>
             </View>
             <View style={styles.row}>
               <Button title='0' />
