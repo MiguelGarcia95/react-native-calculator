@@ -1,11 +1,13 @@
 import React, {Component} from 'react';
 import {StyleSheet, Text, View, TouchableOpacity} from 'react-native';
+// import console = require('console');
 
 export default class App extends Component {
   constructor() {
     super();
     this.state = {
-      resultText: ''
+      resultText: '',
+      calculationText: ''
     }
     this.operations = ['DEL', '+', '-', '*', '/'];
 
@@ -16,20 +18,22 @@ export default class App extends Component {
 
   calculateResult() {
     const text = this.state.resultText;
-    if (text) {
-
-    }
-    //parse text
+    this.setState({
+      calculationText: eval(text)
+    })
   }
 
   buttonPressed(text) {
-    if (text === '=' || text === '.' && this.state.resultText.includes('.')) {
+    if (text === '=') {
       return this.calculateResult();
     }
 
+    // if (text !== '.' && !this.state.resultText.includes('.')) {
+    // }
     this.setState({
       resultText: this.state.resultText+text
     })
+
   }
 
   operate(operation) {
@@ -80,7 +84,7 @@ export default class App extends Component {
           <Text style={styles.resultText}>{this.state.resultText}</Text>
         </View>
         <View style={styles.calculation}>
-          <Text style={styles.calculationText}>121</Text>
+          <Text style={styles.calculationText}>{this.state.calculationText}</Text>
         </View>
         <View style={styles.buttons}>
           <View style={styles.numbers}>
