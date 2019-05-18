@@ -8,6 +8,28 @@ export default class App extends Component {
   }
 
   render() {
+    let rows = [];
+    let nums = [0 , 0, '='];
+    for(let i = 0; i < 4; i++) {
+      let row = [];
+      for(let j = 0; j < 3; j++) {
+        if (i !== 3) {
+          row.push(
+            <TouchableOpacity style={styles.btn}>
+              <Text style={styles.btntext}>{i*3 + j + 1}</Text>
+            </TouchableOpacity>
+          )
+        } else {
+          row.push(
+            <TouchableOpacity style={styles.btn}>
+              <Text style={styles.btntext}>{nums[j]}</Text>
+            </TouchableOpacity>
+          )
+        }
+      }
+      rows.push(<View style={styles.row}>{row}</View>)
+    }
+    
     return (
       <View style={styles.container}>
         <View style={styles.result}>
@@ -18,32 +40,7 @@ export default class App extends Component {
         </View>
         <View style={styles.buttons}>
           <View style={styles.numbers}>
-            <View style={styles.row}>
-              <TouchableOpacity style={styles.btn}>
-                <Text>0</Text>
-              </TouchableOpacity>
-              <TouchableOpacity style={styles.btn}>
-                <Text>0</Text>
-              </TouchableOpacity>
-              <TouchableOpacity style={styles.btn}>
-                <Text>0</Text>
-              </TouchableOpacity>
-            </View>
-            <View style={styles.row}>
-              <Button title='0' />
-              <Button title='1' />
-              <Button title='2' />
-            </View>
-            <View style={styles.row}>
-              <Button title='0' />
-              <Button title='1' />
-              <Button title='2' />
-            </View>
-            <View style={styles.row}>
-              <Button title='0' />
-              <Button title='1' />
-              <Button title='2' />
-            </View>
+            {rows}
           </View>
           <View style={styles.operations}>
             <Button title='+' />
