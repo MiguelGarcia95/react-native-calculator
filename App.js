@@ -79,7 +79,6 @@ export default class App extends Component {
         <View style={styles.calculation}>
           <Text style={styles.calculationText}>{this.state.calculationText}</Text>
         </View>
-
         <View style={styles.buttons}>
           <NumberRows numbers={nums} buttonPressed={this.buttonPressed} />
           <OperationsColumn operations={this.operations} operate={this.operate} />
@@ -93,6 +92,12 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
   },
+  result: {
+    flex: 2,
+    backgroundColor: 'white',
+    justifyContent: 'center',
+    alignItems: 'flex-end'
+  },
   resultText: {
     fontSize: 30,
     color: 'black'
@@ -100,12 +105,6 @@ const styles = StyleSheet.create({
   calculationText: {
     fontSize: 24,
     color: '#aaa'
-  },
-  result: {
-    flex: 2,
-    backgroundColor: 'white',
-    justifyContent: 'center',
-    alignItems: 'flex-end'
   },
   calculation: {
     flex: 1,
@@ -116,9 +115,5 @@ const styles = StyleSheet.create({
   buttons: {
     flex: 7,
     flexDirection: 'row'
-  },
-  numbers: {
-    flex: 3,
-    backgroundColor: '#434343'
   }
 });
