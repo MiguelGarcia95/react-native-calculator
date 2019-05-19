@@ -113,37 +113,6 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
   },
-  // result: {
-  //   flex: 2, 
-  //   backgroundColor: 'white',
-  //   justifyContent: 'center',
-  //   alignItems: 'flex-end'
-  // },
-  // resultActive: {
-  //   flex: 0
-  // },
-  // resultText: {
-  //   fontSize: 30,
-  //   color: 'black'
-  // },
-  // calculationText: {
-  //   fontSize: 24,
-  //   color: '#aaa'
-  // },
-  // calculationTextActive: {
-  //   fontSize: 54,
-  //   color: 'black'
-  // },
-  // calculationActive: {
-  //   flex: 3,
-  //   justifyContent: 'center',
-  //   alignItems: 'flex-end'
-  // },
-  // calculation: {
-  //   flex: 1,
-  //   justifyContent: 'center',
-  //   alignItems: 'flex-end'
-  // }, 
   buttons: {
     flex: 7,
     flexDirection: 'row'
