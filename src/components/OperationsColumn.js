@@ -1,5 +1,5 @@
 import React from 'react'
-import { Text, View, StyleSheet } from 'react-native'
+import { StyleSheet, Text, TouchableOpacity, View} from 'react-native'
 
 const displayOperations = (operations, operate) => {
   return operations.map(operation => {
@@ -11,10 +11,10 @@ const displayOperations = (operations, operate) => {
   })
 }
 
-const OperationsColumn = () => {
+const OperationsColumn = ({operations, operate}) => {
   return (
     <View style={styles.operations}>
-
+      {displayOperations(operations, operate)}
     </View>
   )
 }
@@ -25,7 +25,17 @@ const styles = StyleSheet.create({
     justifyContent: 'space-around',
     backgroundColor: '#636363',
     alignItems: 'stretch',
-  }
+  },
+  btntext: {
+    fontSize: 30,
+    color: 'white'
+  },
+  btn: {
+    flex: 1,
+    alignItems: 'center',
+    alignSelf: 'stretch',
+    justifyContent: 'center'
+  },
 })
 
 // class OperationsColumn extends Component {

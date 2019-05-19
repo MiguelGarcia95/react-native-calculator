@@ -83,15 +83,6 @@ export default class App extends Component {
       rows.push(<View key={nums[i][0]} style={styles.row}>{row}</View>)
     }
 
-    let ops = [];
-    for(let i = 0; i < 5; i++) {
-      ops.push(
-        <TouchableOpacity key={this.operations[i]}  style={styles.btn} onPress={() => this.operate(this.operations[i])}>
-          <Text style={styles.btntext}>{this.operations[i] }</Text>
-        </TouchableOpacity>
-      )
-    }
-
     return (
       <View style={styles.container}>
         <View style={styles.result}>
@@ -104,9 +95,7 @@ export default class App extends Component {
           <View style={styles.numbers}>
             {rows}
           </View>
-          <View style={styles.operations}>
-            {ops}
-          </View>
+          <OperationsColumn operations={this.operations} operate={this.operate} />
         </View>
       </View>
     );
