@@ -1,6 +1,8 @@
 import React, {Component} from 'react';
 import {StyleSheet, Text, View} from 'react-native';
 import NumberRows from './components/NumberRows';
+import ResultScreen from './components/ResultScreen';
+import CalculationsScreen from './components/CalculationsScreen';
 import OperationsColumn from './components/OperationsColumn';
 
 export default class App extends Component {
