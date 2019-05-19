@@ -5,7 +5,7 @@ const displayNumbers = (numbers, buttonPressed) => {
   return numbers.map(number => {
     return (
       <TouchableOpacity key={number} onPress={() => buttonPressed(number)} style={styles.btn}>
-        <Text style={styles.btntext}>{nums[i][j]}</Text>
+        <Text style={styles.btntext}>{number}</Text>
       </TouchableOpacity>
     )
   })

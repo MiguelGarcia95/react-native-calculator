@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
 import {StyleSheet, Text, View, TouchableOpacity} from 'react-native';
-import NumberRow from './src/components/NumberRow';
+import NumberRows from './src/components/NumberRows';
 import OperationsColumn from './src/components/OperationsColumn';
 // import console = require('console');
 
@@ -69,19 +69,7 @@ export default class App extends Component {
   }
 
   render() {
-    let rows = [];
     let nums = [[1,2,3], [4,5,6], [7,8,9], ['.', 0, '=']];
-    for(let i = 0; i < 4; i++) {
-      let row = [];
-      for(let j = 0; j < 3; j++) {
-        row.push(
-          <TouchableOpacity key={nums[i][j]} onPress={() => this.buttonPressed(nums[i][j])} style={styles.btn}>
-            <Text style={styles.btntext}>{nums[i][j]}</Text>
-          </TouchableOpacity>
-        )
-      }
-      rows.push(<View key={nums[i][0]} style={styles.row}>{row}</View>)
-    }
 
     return (
       <View style={styles.container}>
@@ -91,10 +79,9 @@ export default class App extends Component {
         <View style={styles.calculation}>
           <Text style={styles.calculationText}>{this.state.calculationText}</Text>
         </View>
+
         <View style={styles.buttons}>
-          <View style={styles.numbers}>
-            {rows}
-          </View>
+          <NumberRows numbers={nums} buttonPressed={this.buttonPressed} />
           <OperationsColumn operations={this.operations} operate={this.operate} />
         </View>
       </View>

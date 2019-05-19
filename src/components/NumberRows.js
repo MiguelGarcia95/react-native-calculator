@@ -11,7 +11,7 @@ const displayRows = (numbersArray, buttonPressed) => {
 const NumberRows = ({numbers, buttonPressed}) => {
   return (
     <View style={styles.numbers}>
-      
+      {displayRows(numbers, buttonPressed)}
     </View>
   )
 }
