@@ -8,7 +8,8 @@ export default class App extends Component {
     super();
     this.state = {
       resultText: '',
-      calculationText: ''
+      calculationText: '',
+      calculationActive: false
     }
     this.operations = ['DEL', 'C', '+', '-', '*', '/'];
 
@@ -34,6 +35,7 @@ export default class App extends Component {
       case '/':
         return false;
       default: 
+        this.setState({calculationActive: true})
         return true;
     }
   }
@@ -43,6 +45,10 @@ export default class App extends Component {
       return this.validate() && this.calculateResult();
     }
 
+    if (this.state.calculationActive) {
+      this.setState({calculationActive: false})
+    }
+
     if (text === '.' && this.singleDecimalCheck(this.state.resultText)) {
       return; 
     }
@@ -50,7 +56,6 @@ export default class App extends Component {
     this.setState({
       resultText: this.state.resultText+text
     })
-
   }
 
   singleDecimalCheck(value) {
@@ -84,14 +89,14 @@ export default class App extends Component {
 
   render() {
     let nums = [[1,2,3], [4,5,6], [7,8,9], ['.', 0, '=']];
-
+    const {calculationActive, calculationText, resultText} = this.state;
     return (
       <View style={styles.container}>
         <View style={styles.result}>
-          <Text style={styles.resultText}>{this.state.resultText}</Text>
+          <Text style={styles.resultText}>{resultText}</Text>
         </View>
         <View style={styles.calculation}>
-          <Text style={styles.calculationText}>{this.state.calculationText}</Text>
+          <Text style={styles.calculationText}>{calculationText}</Text>
         </View>
         <View style={styles.buttons}>
           <NumberRows numbers={nums} buttonPressed={this.buttonPressed} />
