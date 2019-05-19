@@ -117,7 +117,7 @@ const styles = StyleSheet.create({
   },
   resultText: {
     fontSize: 30,
-    color: 'white'
+    color: 'black'
   },
   btntext: {
     fontSize: 30,
@@ -131,7 +131,7 @@ const styles = StyleSheet.create({
   },
   calculationText: {
     fontSize: 24,
-    color: 'white'
+    color: '#aaa'
   },
   row: {
     flex: 1,
