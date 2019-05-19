@@ -161,10 +161,10 @@ const styles = StyleSheet.create({
     flex: 3,
     backgroundColor: '#434343'
   },
-  operations: {
-    flex: 1,
-    justifyContent: 'space-around',
-    backgroundColor: '#636363',
-    alignItems: 'stretch',
-  }
+  // operations: {
+  //   flex: 1,
+  //   justifyContent: 'space-around',
+  //   backgroundColor: '#636363',
+  //   alignItems: 'stretch',
+  // }
 });
