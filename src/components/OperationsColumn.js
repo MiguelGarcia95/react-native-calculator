@@ -36,16 +36,6 @@ const styles = StyleSheet.create({
     alignSelf: 'stretch',
     justifyContent: 'center'
   },
-})
-
-// class OperationsColumn extends Component {
-//   render() {
-//     return (
-//       <View style={styles.operations}>
-        
-//       </View>
-//     )
-//   }
-// }
+});
 
 export default OperationsColumn;
