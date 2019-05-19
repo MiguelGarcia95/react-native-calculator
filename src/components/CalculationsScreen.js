@@ -1,10 +1,10 @@
 import React from 'react'
 import { View, Text } from 'react-native'
 
-const CalculationsScreen = () => {
+const CalculationsScreen = ({resultText, active}) => {
   return (
-    <View>
-      <Text></Text>
+    <View style={[styles.result, active && {display: 'none'}]}>
+      <Text style={styles.resultText}>{resultText}</Text>
     </View>
   )
 }
