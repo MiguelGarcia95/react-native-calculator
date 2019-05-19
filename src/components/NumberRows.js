@@ -1,10 +1,16 @@
 import React from 'react'
-import { Text, View } from 'react-native'
+import { Text, View } from 'react-native';
+import NumberRow from './NumberRow';
+
+const displayRows = (numbers, buttonPressed) => {
+  return numbers.map(number => {
+    return <NumberRow key={number} numbers={numbers} buttonPressed={buttonPressed} />
+  })
+}
 
 const NumberRows = ({numbers, buttonPressed}) => {
   return (
-    <View>
-      <Text> textInComponent </Text>
+    <View style={styles.numbers}>
     </View>
   )
 }
