@@ -55,11 +55,10 @@ export default class App extends Component {
 
   singleDecimalCheck(value) {
     let textValueArray = value.split(/\+|\-|\*|\//);
-    let doesDecimalRepeat = false;
     if (textValueArray[textValueArray.length - 1].includes('.')) {
-      doesDecimalRepeat = true;
+      return true;
     }
-    return doesDecimalRepeat;
+    return false;
   }
 
   operate(operation) {
