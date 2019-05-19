@@ -22,9 +22,8 @@ export default class App extends Component {
   }
 
   calculateResult() {
-    const text = this.state.resultText;
     this.setState({
-      calculationText: eval(text)
+      calculationText: eval(this.state.resultText)
     })
   }
 
