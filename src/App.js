@@ -97,16 +97,8 @@ export default class App extends Component {
     const {calculationActive, calculationText, resultText} = this.state;
     return (
       <View style={styles.container}>
-
-        <CalculationsScreen />
-        {/* <View style={[styles.result, calculationActive && {display: 'none'}]}>
-          <Text style={styles.resultText}>{resultText}</Text>
-        </View> */}
-        
-        <ResultScreen />
-        {/* <View style={calculationActive ? styles.calculationActive : styles.calculation}>
-          <Text style={calculationActive ? styles.calculationTextActive : styles.calculationText}>{calculationText}</Text>
-        </View> */}
+        <CalculationsScreen resultText={resultText} active={calculationActive} />
+        <ResultScreen calculationText={calculationText} active={calculationActive} />
         
         <View style={styles.buttons}>
           <NumberRows numbers={nums} buttonPressed={this.buttonPressed} />
