@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
 import {StyleSheet, Text, View} from 'react-native';
-import NumberRows from './src/components/NumberRows';
-import OperationsColumn from './src/components/OperationsColumn';
+import NumberRows from './components/NumberRows';
+import OperationsColumn from './components/OperationsColumn';
 
 export default class App extends Component {
   constructor() {
