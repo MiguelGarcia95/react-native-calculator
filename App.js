@@ -2,7 +2,6 @@ import React, {Component} from 'react';
 import {StyleSheet, Text, View} from 'react-native';
 import NumberRows from './src/components/NumberRows';
 import OperationsColumn from './src/components/OperationsColumn';
-// import console = require('console');
 
 export default class App extends Component {
   constructor() {
@@ -11,7 +10,7 @@ export default class App extends Component {
       resultText: '',
       calculationText: ''
     }
-    this.operations = ['DEL', '+', '-', '*', '/'];
+    this.operations = ['DEL', 'C', '+', '-', '*', '/'];
 
     this.buttonPressed = this.buttonPressed.bind(this);
     this.calculateResult = this.calculateResult.bind(this);
@@ -44,16 +43,32 @@ export default class App extends Component {
       return this.validate() && this.calculateResult();
     }
 
+    if (text === '.' && this.singleDecimalCheck(this.state.resultText)) {
+      return; 
+    }
+
     this.setState({
       resultText: this.state.resultText+text
     })
 
   }
 
+  singleDecimalCheck(value) {
+    let textValueArray = value.split(/\+|\-|\*|\//);
+    let doesDecimalRepeat = false;
+    if (textValueArray[textValueArray.length - 1].includes('.')) {
+      doesDecimalRepeat = true;
+    }
+    return doesDecimalRepeat;
+  }
+
   operate(operation) {
     switch(operation) {
       case 'DEL':
         this.setState({resultText: this.state.resultText.slice(0, -1)});
+        break;
+      case 'C':
+        this.setState({resultText: '', calculationText: ''});
         break;
       case '+': 
       case '-': 
