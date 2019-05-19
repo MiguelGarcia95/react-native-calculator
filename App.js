@@ -97,25 +97,9 @@ const styles = StyleSheet.create({
     fontSize: 30,
     color: 'black'
   },
-  btntext: {
-    fontSize: 30,
-    color: 'white'
-  },
-  btn: {
-    flex: 1,
-    alignItems: 'center',
-    alignSelf: 'stretch',
-    justifyContent: 'center'
-  },
   calculationText: {
     fontSize: 24,
     color: '#aaa'
-  },
-  row: {
-    flex: 1,
-    flexDirection: 'row',
-    justifyContent: 'space-around',
-    alignItems: 'center'
   },
   result: {
     flex: 2,
@@ -136,11 +120,5 @@ const styles = StyleSheet.create({
   numbers: {
     flex: 3,
     backgroundColor: '#434343'
-  },
-  // operations: {
-  //   flex: 1,
-  //   justifyContent: 'space-around',
-  //   backgroundColor: '#636363',
-  //   alignItems: 'stretch',
-  // }
+  }
 });
