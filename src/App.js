@@ -78,8 +78,13 @@ export default class App extends Component {
       case 'C':
         this.setState({resultText: '', calculationText: ''});
         break;
+      case '-':
+        if (this.state.resultText.slice(-1) === '-') return;
+        this.setState({
+          resultText: this.state.resultText + operation
+        })
+        break;
       case '+': 
-      case '-': 
       case '*': 
       case '/': 
         if (this.operations.indexOf(this.state.resultText.slice(-1)) > 0) return;
