@@ -1,5 +1,7 @@
 import React, {Component} from 'react';
 import {StyleSheet, Text, View, TouchableOpacity} from 'react-native';
+import NumberRow from './src/components/NumberRow';
+import OperationsColumn from './src/components/OperationsColumn';
 // import console = require('console');
 
 export default class App extends Component {
