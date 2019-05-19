@@ -67,6 +67,9 @@ export default class App extends Component {
   }
 
   operate(operation) {
+    if (this.state.calculationActive) {
+      this.setState({calculationActive: false})
+    }
     switch(operation) {
       case 'DEL':
         this.setState({resultText: this.state.resultText.slice(0, -1)});
