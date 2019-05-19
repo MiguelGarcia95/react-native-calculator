@@ -98,15 +98,15 @@ export default class App extends Component {
     return (
       <View style={styles.container}>
 
-        {/* <CalculationScreen /> */}
-        <View style={[styles.result, calculationActive && {display: 'none'}]}>
+        <CalculationsScreen />
+        {/* <View style={[styles.result, calculationActive && {display: 'none'}]}>
           <Text style={styles.resultText}>{resultText}</Text>
-        </View>
+        </View> */}
         
-        {/* <ResultScreen /> */}
-        <View style={calculationActive ? styles.calculationActive : styles.calculation}>
+        <ResultScreen />
+        {/* <View style={calculationActive ? styles.calculationActive : styles.calculation}>
           <Text style={calculationActive ? styles.calculationTextActive : styles.calculationText}>{calculationText}</Text>
-        </View>
+        </View> */}
         
         <View style={styles.buttons}>
           <NumberRows numbers={nums} buttonPressed={this.buttonPressed} />
@@ -121,37 +121,37 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
   },
-  result: {
-    flex: 2,
-    backgroundColor: 'white',
-    justifyContent: 'center',
-    alignItems: 'flex-end'
-  },
-  resultActive: {
-    flex: 0
-  },
-  resultText: {
-    fontSize: 30,
-    color: 'black'
-  },
-  calculationText: {
-    fontSize: 24,
-    color: '#aaa'
-  },
-  calculationTextActive: {
-    fontSize: 54,
-    color: 'black'
-  },
-  calculationActive: {
-    flex: 3,
-    justifyContent: 'center',
-    alignItems: 'flex-end'
-  },
-  calculation: {
-    flex: 1,
-    justifyContent: 'center',
-    alignItems: 'flex-end'
-  }, 
+  // result: {
+  //   flex: 2, 
+  //   backgroundColor: 'white',
+  //   justifyContent: 'center',
+  //   alignItems: 'flex-end'
+  // },
+  // resultActive: {
+  //   flex: 0
+  // },
+  // resultText: {
+  //   fontSize: 30,
+  //   color: 'black'
+  // },
+  // calculationText: {
+  //   fontSize: 24,
+  //   color: '#aaa'
+  // },
+  // calculationTextActive: {
+  //   fontSize: 54,
+  //   color: 'black'
+  // },
+  // calculationActive: {
+  //   flex: 3,
+  //   justifyContent: 'center',
+  //   alignItems: 'flex-end'
+  // },
+  // calculation: {
+  //   flex: 1,
+  //   justifyContent: 'center',
+  //   alignItems: 'flex-end'
+  // }, 
   buttons: {
     flex: 7,
     flexDirection: 'row'

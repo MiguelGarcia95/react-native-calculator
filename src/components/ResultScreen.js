@@ -1,5 +1,5 @@
 import React from 'react'
-import { View, Text } from 'react-native'
+import { View, Text, StyleSheet } from 'react-native'
 
 const ResultScreen = ({calculationText, active}) => {
   return (
@@ -8,5 +8,26 @@ const ResultScreen = ({calculationText, active}) => {
     </View>
   )
 }
+
+const styles = StyleSheet.create({
+  calculationText: {
+    fontSize: 24,
+    color: '#aaa'
+  },
+  calculationTextActive: {
+    fontSize: 54,
+    color: 'black'
+  },
+  calculationActive: {
+    flex: 3,
+    justifyContent: 'center',
+    alignItems: 'flex-end'
+  },
+  calculation: {
+    flex: 1,
+    justifyContent: 'center',
+    alignItems: 'flex-end'
+  }
+});
 
 export default ResultScreen
